@@ -204,9 +204,9 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="my-6 w-full p-4">
+    <div className="my-6 w-full">
         <div className="flex gap-4">
-            <div className="vsm:absolute lg:relative" onClick={handleShowSidebar}>
+            <div className="vsm:absolute vsm:left-5 vsm:mt-2 lg:relative" onClick={handleShowSidebar}>
                 <Image
                     src="/bar.svg"
                     alt="Profile"
@@ -216,60 +216,59 @@ export default function Dashboard() {
                 />
             </div>
             {/* card box */}
-            <div className="md:ml-4 w-full">
+            <div className="md:ml-4 vsm:mt-8 mt-6 w-full">
                 {/* card head */}
-                <div className="w-[60vw] flex vsm:justify-center md:justify-start">
-                  <div className="vsm:m-auto md:flex w-full">
-                    <div className="flex items-center vsm:justify-center md:justify-start gap-4 w-full">
-                        <div>
-                            <Image
-                                src="/profile-pic.svg"
-                                alt="Profile"
-                                width={80}
-                                height={80}
-                                className="object-cover"
-                            />
-                        </div>
-                        <div className="">
-                            <h5 className="text-black font-semibold vsm:text-base ">Welcome, Temiloluwa</h5>
-                            <p className="text-base text-sm font-medium text-black">My profile Completeness</p>
-                            <div className="flex items-center text-black">
-                                <Line percent={60} strokeWidth={4} trailWidth={4} strokeColor="#EF2424" style={{marginRight: "8px"}} /><div className="text-sm">60%</div>
+                <div className="sm:w-[60vw] vsm:w-full flex vsm:justify-center md:justify-start">
+                    <div className="vsm:m-auto md:flex w-full">
+                        <div className="flex items-center vsm:justify-center md:justify-start sm:gap-4 vsm:gap-2 w-full">
+                            <div>
+                                <Image
+                                    src="/profile-pic.svg"
+                                    alt="Profile"
+                                    width={80}
+                                    height={80}
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div className="">
+                                <h5 className="text-black font-semibold vsm:text-base ">Welcome, Temiloluwa</h5>
+                                <p className="text-base text-sm font-medium text-black">My profile Completeness</p>
+                                <div className="flex items-center text-black">
+                                    <Line percent={60} strokeWidth={4} trailWidth={4} strokeColor="#EF2424" style={{marginRight: "8px"}} /><div className="text-sm">60%</div>
+                                </div>
                             </div>
                         </div>
+                        <div className=" flex items-center vsm:justify-center md:justify-start vsm:gap-2 sm:gap-4 w-full vsm:my-4 md:mt-0">
+                            <p className="text-black text-base font-bold">Relationship Type:</p>
+                            <select value="Dating" className="bg-white shadow-lg rounded-lg px-4 py-1 text-black text-sm" onChange={handleOnChange}>
+                                <option>
+                                    Dating
+                                </option>
+                                <option>
+                                    Single
+                                </option>
+                                <option>
+                                    Searching
+                                </option>
+                                <option>
+                                    Talking Stage
+                                </option>
+                            </select>
+                        </div>
                     </div>
-                    <div className=" flex items-center vsm:justify-center md:justify-start  gap-4 w-full vsm:my-6 md:mt-0">
-                        <p className="text-black text-base font-bold">Relationship Type:</p>
-                        <select value="Dating" className="bg-white shadow-lg rounded-lg px-4 py-1 text-black text-sm" onChange={handleOnChange}>
-                            <option>
-                                Dating
-                            </option>
-                            <option>
-                                Single
-                            </option>
-                            <option>
-                                Searching
-                            </option>
-                            <option>
-                                Talking Stage
-                            </option>
-                        </select>
-                    </div>
-                  </div>
                 </div>
                 {/* card head end */}
 
                 {/* cards */}
-                <div className="mt-10 flex flex-wrap gap-6  vsm:justify-center md:justify-start">
+                <div className="mt-10 flex flex-wrap vsm:gap-4 sm:gap-6  vsm:justify-center md:justify-start">
                     {data?.map((e, key) => (
-                        <div className="rounded-lg shadow-md vsm:max-w-[250px] md:w-[250px] h-[350px]" key={key}>
+                        <div className="rounded-lg shadow-md vsm:w-[300px] md:w-[250px] h-[400px]" key={key}>
                         {/* head */}
-                        <div className="vsm:max-w-[250px] md:w-[250px] h-[100px]">
+                        <div className="relative w-[300px] md:w-[250px] aspect-[4/2] rounded-tl-lg rounded-tr-lg overflow-hidden">
                             <Image
                                 src={e.headImg}
                                 alt="Profile"
-                                width={250}
-                                height={50}
+                                fill
                                 className="object-cover"
                             />
                         </div>
@@ -310,7 +309,7 @@ export default function Dashboard() {
                                 />
                                 </div>
                             </div>
-                            <div className="flex justify-center absolute top-[-25px] left-[100px] rounded-[50%] ">
+                            <div className="flex justify-center absolute top-[-25px] md:left-[100px] vsm:left-[115px] rounded-[50%] ">
                                 <Image
                                     src={e.avatar}
                                     alt="Profile"

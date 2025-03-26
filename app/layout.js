@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} font-sans antialiased w-full`}
+        className={`${inter.variable} font-sans  w-[100w] bg-[#F6F6F6]`}
       >
         <ClientProvider>
             <Layout>

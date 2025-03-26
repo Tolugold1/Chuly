@@ -15,7 +15,7 @@ export default function Profile() {
     }
   }
   return (
-    <div className="flex p-4 w-full">
+    <div className="w-full">
       <div className="flex justify-center w-full">
         {/* Cover photo */}
         <div className="vsm:absolute vsm:left-5 vsm:mt-2 lg:relative mt-8" onClick={handleShowSidebar}>
@@ -28,14 +28,14 @@ export default function Profile() {
           />
         </div>
         {/* MAIN CONTENT */}
-        <main className="container mx-auto px-4 vsm:mt-8 mt-6">
+        <main className="mx-auto vsm:mt-8 mt-6 w-full">
           {/* COVER + PROFILE SECTION */}
           <section className="relative">
             <div className="flex justify-between py-5 px-10 absolute w-full vsm:mb-10 mb-0">
-            <button className="bg-[#00000099] py-1 px-4 rounded-md text-white text-sm font-medium top-10 left-5">
+            <button className="bg-[#00000099] py-1 md:px-4 vsm:p-2 rounded-md text-white text-sm vsm:text-xs font-medium top-10 left-5">
               <span>Back</span>
             </button>
-            <button className="bg-[#00000099] py-1 px-4 rounded-md text-white text-sm font-medium top-10 left-5">
+            <button className="bg-[#00000099] py-1 md:px-4 vsm:p-2 rounded-md text-white text-sm vsm:text-xs font-medium top-10 left-5">
               <span>Update Cover</span>
             </button>
             </div>
@@ -48,7 +48,7 @@ export default function Profile() {
             {/* Profile details */}
             <div className="px-4 py-2 relative flex">
               {/* Profile avatar */}
-              <div className="absolute top-[-110px] left-[60px]">
+              <div className="absolute top-[-110px] md:left-[60px] vsm:left-[30px]">
                 <div className="flex flex-wrap">
                   <div className="relative w-[150px]">
                     <Image
