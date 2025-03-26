@@ -3,8 +3,8 @@
 import { useSelector, useDispatch } from "react-redux";
 import Image from "next/image";
 import { Line } from 'rc-progress';
-import { show, hide } from "../store/slices/sidebarSlice"
- 
+import { show, hide } from "../../store/slices/sidebarSlice"
+
 let data = [
     {
         name1: "Davina",
@@ -97,8 +97,8 @@ let data = [
         percent: "70% Match",
         addressStatus: "Verified Address",
         description: "No bio available",
-        avatar: "/card8-avatar.svg",
-        headImg: "/card8-head.svg",
+        avatar: "/card1-avatar.svg",
+        headImg: "/card1-head.svg",
         heart: "/heart.svg",
         color: '#EF2424'
     },
@@ -107,7 +107,7 @@ let data = [
         age: 26,
         location: "",
         percent: "80% Match",
-        addressStatus: "",
+        addressStatus: "Verified Address",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec. Integer pretium orci nec nulla pellentesque pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec. Integer pretium orci nec nulla pellentesque pretium",
         avatar: "/card2-avatar.svg",
         headImg: "/card2-head.svg",
@@ -119,7 +119,7 @@ let data = [
         age: 25,
         location: "Lagos",
         percent: "89% Match",
-        addressStatus: "",
+        addressStatus: "Verified Address",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec. Integer pretium orci nec nulla pellentesque pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec. Integer pretium orci nec nulla pellentesque pretium",
         avatar: "/card10-avatar.svg",
         headImg: "/card10-head.svg",
@@ -140,9 +140,9 @@ let data = [
     },
     {
         name1: "Vivian",
-        age: "",
+        age: 23,
         location: "",
-        percent: "71% Match",
+        percent: "81% Match",
         addressStatus: "",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec. Integer pretium orci nec nulla pellentesque pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec. Integer pretium orci nec nulla pellentesque pretium",
         avatar: "/card12-avatar.svg",
@@ -157,7 +157,7 @@ let data = [
         percent: "80% Match",
         addressStatus: "",
         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec. Integer pretium orci nec nulla pellentesque pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec. Integer pretium orci nec nulla pellentesque pretium",
-        avatar: "/card13-avatar.svg",
+        avatar: "/card3-avatar.svg",
         headImg: "/card13-head.svg",
         heart: "/heart.svg",
         color: '#EF2424'
@@ -276,20 +276,20 @@ export default function Dashboard() {
                         <div className="relative flex flex-col justify-between h-[230px]">
                             <div className="flex items-center justify-between px-6 py-2">
                                 <div>
-                                    <h5 className="text-black text-sm font-semibold ">{e.name1}{e.age !== "" ? "," : null} {e.age}</h5>
+                                    <h5 className="text-black text-sm font-semibold ">{e.name1}, {e.age}</h5>
                                     <h5 className="text-black text-xs font-semibold ">{e.location}</h5>
                                 </div>
                                 <div>
                                     <h5 className="text-black text-sm font-semibold text-right">{e.percent}</h5>
                                     {e.addressStatus !== "" ? 
-                                        <h6 className="text-black text-xs font-semibold flex items-center text-right">
+                                        <h5 className="text-black text-sm font-semibold flex items-center text-right">
                                         <Image
                                         src="/tick.svg"
                                         alt="Profile"
                                         width={12}
                                         height={12}
                                         className="object-cover"
-                                    /><span className=" text-[10px]">{e.addressStatus}</span></h6> : null
+                                    /><span className=" text-xs">{e.addressStatus}</span></h5> : null
                                     }
                                 </div>
                             </div>
