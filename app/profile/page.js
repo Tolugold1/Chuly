@@ -15,7 +15,7 @@ export default function Profile() {
     }
   }
   return (
-    <div className="w-full">
+    <div className="w-full p-6">
       <div className="flex justify-center w-full">
         {/* Cover photo */}
         <div className="vsm:absolute vsm:left-5 vsm:mt-2 lg:relative mt-8" onClick={handleShowSidebar}>
