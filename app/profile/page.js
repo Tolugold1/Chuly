@@ -348,7 +348,7 @@ export default function Profile() {
                   <div className="w-[50px] h-[50px]">
                   <div className="flex justify-center rounded-[50%] bg-[#F6E123] w-full h-full p-2">
                       <Image
-                        src="/Photography-icon.svg"
+                        src="/photography-icon.svg"
                         alt="Photography icon"
                         width={40}
                         height={40}
